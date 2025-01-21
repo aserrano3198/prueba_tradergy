@@ -3,8 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 # Cargar datos
-@st.cache
-@st.cache
+@st.cache_data
 def load_data(file_path):
     df = pd.read_csv(file_path)
     df["datetime"] = pd.to_datetime(df["datetime"], errors="coerce", utc=True)
